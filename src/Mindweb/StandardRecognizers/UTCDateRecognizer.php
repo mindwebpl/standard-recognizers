@@ -1,5 +1,5 @@
 <?php
-namespace Mindweb\Tracker\Recognizer;
+namespace Mindweb\StandardRecognizers;
 
 use Mindweb\Recognizer\Event\AttributionEvent;
 use Mindweb\Recognizer\Recognizer;
