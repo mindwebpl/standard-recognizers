@@ -11,12 +11,7 @@ class UserIdRecognizer extends Recognizer
     /**
      * @var array
      */
-    private $defaultUserIds = array('_id', 'id', 'user_id');
-
-    /**
-     * @var array
-     */
-    private $userIds;
+    private $userIds = array('_id', 'id', 'user_id');
 
     /**
      * @param Pimple $application
@@ -26,11 +21,7 @@ class UserIdRecognizer extends Recognizer
         if (isset($application['configuration'])) {
             try {
                 $this->userIds = $application['configuration']->get('tracker.userIds');
-            } catch (InvalidConfigEntryException $configException) {
-                $this->userIds = $this->defaultUserIds;
-            }
-        } else {
-            $this->userIds = $this->defaultUserIds;
+            } catch (InvalidConfigEntryException $configException) {}
         }
     }
 
