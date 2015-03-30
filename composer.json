@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "mindweb/recognizer": "1.0.*",
+        "mindweb/recognizer": ">=1.0.1",
         "mindweb/config": "1.0.*",
         "pimple/pimple": "~1.0",
         "league/url": "~3.3"
