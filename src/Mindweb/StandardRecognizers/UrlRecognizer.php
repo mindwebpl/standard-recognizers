@@ -29,7 +29,7 @@ class UrlRecognizer extends Recognizer
             );
         }
 
-        $attributionEvent->attribute('url', $url);
+        $attributionEvent->attribute('url', (string) $url);
     }
 
     /**
