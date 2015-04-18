@@ -7,20 +7,22 @@ use Mindweb\Recognizer\Recognizer;
 class SiteRecognizer extends Recognizer
 {
     /**
+     * @var array
+     */
+    private $sitePossibleNames = array('site', 'idsite');
+
+    /**
      * @param Event\AttributionEvent $attributionEvent
      */
     public function recognize(Event\AttributionEvent $attributionEvent)
     {
-        $site = null;
-        if ($attributionEvent->getRequest()->query->has('site')) {
-            $site = $attributionEvent->getRequest()->query->get('site');
+        foreach ($this->sitePossibleNames as $name) {
+            if ($attributionEvent->getRequest()->query->has($name)) {
+                $site = $attributionEvent->getRequest()->query->get($name);
+            }
         }
 
-        if ($attributionEvent->getRequest()->query->has('idsite')) {
-            $site = $attributionEvent->getRequest()->query->get('idsite');
-        }
-
-        if ($site !== null) {
+        if (!empty($site)) {
             $attributionEvent->attribute('site', $site);
         }
     }

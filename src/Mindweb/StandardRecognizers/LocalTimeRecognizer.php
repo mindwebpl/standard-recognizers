@@ -1,26 +1,15 @@
 <?php
 namespace Mindweb\StandardRecognizers;
 
-use Mindweb\Config\Exception\InvalidConfigEntryException;
 use Mindweb\Recognizer\Event;
 use Mindweb\Recognizer\Recognizer;
-use Pimple;
 
 class LocalTimeRecognizer extends Recognizer
 {
-    private $localTimeMap = array('h', 'm', 's');
-
     /**
-     * @param Pimple $application
+     * @var array
      */
-    public function __construct(Pimple $application)
-    {
-        if (isset($application['configuration'])) {
-            try {
-                $this->localTimeMap = $application['configuration']->get('tracker.localTimeMap');
-            } catch (InvalidConfigEntryException $configException) {}
-        }
-    }
+    private $localTimeMap = array('h', 'm', 's');
 
     /**
      * @param Event\AttributionEvent $attributionEvent

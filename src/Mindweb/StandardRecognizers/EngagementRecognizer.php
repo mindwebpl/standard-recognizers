@@ -1,10 +1,8 @@
 <?php
 namespace Mindweb\StandardRecognizers;
 
-use Mindweb\Config\Exception\InvalidConfigEntryException;
 use Mindweb\Recognizer\Event;
 use Mindweb\Recognizer\Recognizer;
-use Pimple;
 
 class EngagementRecognizer extends Recognizer
 {
@@ -16,18 +14,6 @@ class EngagementRecognizer extends Recognizer
         'timestampOfPreviousVisits' => '_viewts',
         'timestampOfFirstVisit' => '_idts'
     );
-
-    /**
-     * @param Pimple $application
-     */
-    public function __construct(Pimple $application)
-    {
-        if (isset($application['configuration'])) {
-            try {
-                $this->engagementKeysMap = $application['configuration']->get('tracker.engagementKeysMap');
-            } catch (InvalidConfigEntryException $configException) {}
-        }
-    }
 
     /**
      * @param Event\AttributionEvent $attributionEvent

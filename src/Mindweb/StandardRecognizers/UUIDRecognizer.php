@@ -1,25 +1,20 @@
 <?php
 namespace Mindweb\StandardRecognizers;
 
-use Mindweb\Config\Configuration;
 use Mindweb\Recognizer\Event\AttributionEvent;
 use Mindweb\Recognizer\Recognizer;
-use Pimple;
 
 class UUIDRecognizer extends Recognizer
 {
     /**
-     * @var Configuration
+     * @var string
      */
-    private $configuration;
+    private $prefix = '';
 
     /**
-     * @param Pimple $app
+     * @var bool
      */
-    public function __construct(Pimple $app)
-    {
-        $this->configuration = $app['configuration'];
-    }
+    private $moreEntropy = false;
 
     /**
      * @param AttributionEvent $attributionEvent
@@ -28,10 +23,7 @@ class UUIDRecognizer extends Recognizer
     {
         $attributionEvent->attribute(
             'uuid',
-            uniqid(
-                $this->configuration->get('tracker.uuid.prefix'),
-                $this->configuration->get('tracker.uuid.moreEntropy')
-            )
+            uniqid($this->prefix, $this->moreEntropy)
         );
     }
 }

@@ -8,6 +8,8 @@ use Mindweb\StandardRecognizers\Exception\UrlIsRequiredException;
 
 class UrlRecognizer extends Recognizer
 {
+    private $parametersToExcludeFromUrl = array();
+
     /**
      * @param Event\AttributionEvent $attributionEvent
      * @throws UrlIsRequiredException
@@ -19,24 +21,15 @@ class UrlRecognizer extends Recognizer
         }
 
         $url = Url::createFromUrl($attributionEvent->getRequest()->query->get('url'));
-        $attribution = $attributionEvent->getAttribution();
-        if (isset($attribution['excludeFromUrlAttribution'])) {
+        if (!empty($this->parametersToExcludeFromUrl)) {
             $url->getQuery()->modify(
                 array_fill_keys(
-                    $attribution['excludeFromUrlAttribution'],
+                    $this->parametersToExcludeFromUrl,
                     null
                 )
             );
         }
 
         $attributionEvent->attribute('url', (string) $url);
-    }
-
-    /**
-     * @return int
-     */
-    public static function getPriority()
-    {
-        return 50;
     }
 }

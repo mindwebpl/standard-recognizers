@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "57e6e0d01d39af072f6a4efe5482e6d0",
+    "hash": "6b33be93cee586f16a091c23b7440991",
     "packages": [
         {
             "name": "league/url",
@@ -61,52 +61,21 @@
             "time": "2015-03-26 10:07:42"
         },
         {
-            "name": "mindweb/config",
-            "version": "1.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mindwebpl/config.git",
-                "reference": "d8af77dd18a52f97cf705529004ee5c86b5451c1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mindwebpl/config/zipball/d8af77dd18a52f97cf705529004ee5c86b5451c1",
-                "reference": "d8af77dd18a52f97cf705529004ee5c86b5451c1",
-                "shasum": ""
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Mindweb\\Config\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Marcin Czołnowski",
-                    "email": "marcin@czolnowski.net"
-                }
-            ],
-            "time": "2015-03-08 20:24:56"
-        },
-        {
             "name": "mindweb/recognizer",
-            "version": "1.0.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mindwebpl/recognizer.git",
-                "reference": "f0584848de8b0185b8483b9fb77502e6e0af3c0e"
+                "reference": "20c8f030785db8ec6641465915659c9a00e30e76"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mindwebpl/recognizer/zipball/f0584848de8b0185b8483b9fb77502e6e0af3c0e",
-                "reference": "f0584848de8b0185b8483b9fb77502e6e0af3c0e",
+                "url": "https://api.github.com/repos/mindwebpl/recognizer/zipball/20c8f030785db8ec6641465915659c9a00e30e76",
+                "reference": "20c8f030785db8ec6641465915659c9a00e30e76",
                 "shasum": ""
             },
             "require": {
+                "mindweb/subscriber": "dev-master",
                 "symfony/event-dispatcher": "~2.3,<2.7",
                 "symfony/http-foundation": "~2.3,<2.7"
             },
@@ -126,34 +95,29 @@
                     "email": "marcin@czolnowski.net"
                 }
             ],
-            "time": "2015-03-29 19:34:20"
+            "time": "2015-04-04 15:13:35"
         },
         {
-            "name": "pimple/pimple",
-            "version": "v1.1.1",
+            "name": "mindweb/subscriber",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/silexphp/Pimple.git",
-                "reference": "2019c145fe393923f3441b23f29bbdfaa5c58c4d"
+                "url": "https://github.com/mindwebpl/subscriber.git",
+                "reference": "829cfcbbcb11d1b52728993b1e5c927b984be3ac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silexphp/Pimple/zipball/2019c145fe393923f3441b23f29bbdfaa5c58c4d",
-                "reference": "2019c145fe393923f3441b23f29bbdfaa5c58c4d",
+                "url": "https://api.github.com/repos/mindwebpl/subscriber/zipball/829cfcbbcb11d1b52728993b1e5c927b984be3ac",
+                "reference": "829cfcbbcb11d1b52728993b1e5c927b984be3ac",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.0"
+                "symfony/config": "~2.0"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.1.x-dev"
-                }
-            },
             "autoload": {
                 "psr-0": {
-                    "Pimple": "lib/"
+                    "Mindweb\\Subscriber\\": "src"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -162,21 +126,66 @@
             ],
             "authors": [
                 {
+                    "name": "Marcin Czołnowski",
+                    "email": "marcin@czolnowski.net"
+                }
+            ],
+            "time": "2015-04-18 16:28:54"
+        },
+        {
+            "name": "symfony/config",
+            "version": "v2.6.6",
+            "target-dir": "Symfony/Component/Config",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Config.git",
+                "reference": "d91be01336605db8da21b79bc771e46a7276d1bc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/Config/zipball/d91be01336605db8da21b79bc771e46a7276d1bc",
+                "reference": "d91be01336605db8da21b79bc771e46a7276d1bc",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "symfony/filesystem": "~2.3"
+            },
+            "require-dev": {
+                "symfony/phpunit-bridge": "~2.7"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.6-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Config\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                },
+                {
                     "name": "Fabien Potencier",
                     "email": "fabien@symfony.com"
                 }
             ],
-            "description": "Pimple is a simple Dependency Injection Container for PHP 5.3",
-            "homepage": "http://pimple.sensiolabs.org",
-            "keywords": [
-                "container",
-                "dependency injection"
-            ],
-            "time": "2013-11-22 08:30:29"
+            "description": "Symfony Config Component",
+            "homepage": "http://symfony.com",
+            "time": "2015-03-30 15:54:10"
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v2.6.5",
+            "version": "v2.6.6",
             "target-dir": "Symfony/Component/EventDispatcher",
             "source": {
                 "type": "git",
@@ -234,18 +243,68 @@
             "time": "2015-03-13 17:37:22"
         },
         {
+            "name": "symfony/filesystem",
+            "version": "v2.6.6",
+            "target-dir": "Symfony/Component/Filesystem",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Filesystem.git",
+                "reference": "4983964b3693e4f13449cb3800c64a9112c301b4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/Filesystem/zipball/4983964b3693e4f13449cb3800c64a9112c301b4",
+                "reference": "4983964b3693e4f13449cb3800c64a9112c301b4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "symfony/phpunit-bridge": "~2.7"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.6-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Filesystem\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                },
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                }
+            ],
+            "description": "Symfony Filesystem Component",
+            "homepage": "http://symfony.com",
+            "time": "2015-03-22 16:55:57"
+        },
+        {
             "name": "symfony/http-foundation",
-            "version": "v2.6.5",
+            "version": "v2.6.6",
             "target-dir": "Symfony/Component/HttpFoundation",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpFoundation.git",
-                "reference": "d527885e37b55ec0e3dc6f4b70566d0f9b2f2388"
+                "reference": "8a6337233f08f7520de97f4ffd6f00e947d892f9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/d527885e37b55ec0e3dc6f4b70566d0f9b2f2388",
-                "reference": "d527885e37b55ec0e3dc6f4b70566d0f9b2f2388",
+                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/8a6337233f08f7520de97f4ffd6f00e947d892f9",
+                "reference": "8a6337233f08f7520de97f4ffd6f00e947d892f9",
                 "shasum": ""
             },
             "require": {
@@ -285,7 +344,7 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "http://symfony.com",
-            "time": "2015-03-13 17:37:22"
+            "time": "2015-04-01 16:50:12"
         },
         {
             "name": "true/punycode",
@@ -338,7 +397,10 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "mindweb/subscriber": 20,
+        "mindweb/recognizer": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
